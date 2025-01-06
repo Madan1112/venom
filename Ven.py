@@ -13,11 +13,6 @@ bot = telebot.TeleBot('8150713241:AAGM0X-xsALRn3zMnV9cr4dmKnUzoTZvF2M')
 # Admin user IDs
 admin_id = {"5050566312"}
 
-# Cooldown settings
-COOLDOWN_TIME = 0  # in seconds
-CONSECUTIVE_ATTACKS_LIMIT = 1000
-CONSECUTIVE_ATTACKS_COOLDOWN = 01  # in seconds
-
 # In-memory storage
 users = {}
 keys = {}
