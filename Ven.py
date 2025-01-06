@@ -6,8 +6,6 @@ import random
 import string
 import json
 
-
-
 # Insert your Telegram bot token here
 bot = telebot.TeleBot('8150713241:AAGM0X-xsALRn3zMnV9cr4dmKnUzoTZvF2M')
 # Admin user IDs
@@ -18,41 +16,6 @@ users = {}
 keys = {}
 bgmi_cooldown = {}
 consecutive_attacks = {}
-
-# Read users and keys from files initially
-def load_data():
-    global users, keys
-    users = read_users()
-    keys = read_keys()
-
-def read_users():
-    try:
-        with open(USER_FILE, "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return {}
-
-def save_users():
-    with open(USER_FILE, "w") as file:
-        json.dump(users, file)
-
-def read_keys():
-    try:
-        with open(KEY_FILE, "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return {}
-
-def save_keys():
-    with open(KEY_FILE, "w") as file:
-        json.dump(keys, file)
-
-def log_command(user_id, target, port, time):
-    user_info = bot.get_chat(user_id)
-    username = user_info.username if user_info.username else f"UserID: {user_id}"
-
-    with open(LOG_FILE, "a") as file:
-        file.write(f"Username: {username}\nTarget: {target}\nPort: {port}\nTime: {time}\n\n")
 
 def clear_logs():
     try:
@@ -379,7 +342,7 @@ def broadcast_message(message):
     bot.reply_to(message, response)
 
 if __name__ == "__main__":
-    load_data()
+
     while True:
         try:
             bot.polling(none_stop=True)
