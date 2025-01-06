@@ -9,7 +9,7 @@ import json
 
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('8150713241:AAHmLJq2UXaNq2z5IdpPLWYAYY0h2rhLkr8')
+bot = telebot.TeleBot('8150713241:AAGM0X-xsALRn3zMnV9cr4dmKnUzoTZvF2M')
 # Admin user IDs
 admin_id = {"5050566312"}
 
